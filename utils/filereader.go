@@ -5,7 +5,6 @@ import (
 	"os"
 )
 
-// ReadLines reads a file and returns an array of strings, one per line
 func ReadLines(filename string) ([]string, error) {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -24,4 +23,29 @@ func ReadLines(filename string) ([]string, error) {
 	}
 
 	return lines, nil
+}
+
+func ParseStringOfNumbersToInts(input string) []int {
+	var numbers []int
+	for _, char := range input {
+		numbers = append(numbers, CastCharToInt(char))
+	}
+	return numbers
+}
+
+func CastCharToInt(c rune) int {
+	return int(c - '0')
+}
+
+func GetIndexOfMaxInt(ints []int) int {
+	maxIndex := 0
+	maxValue := ints[0]
+
+	for i, v := range ints {
+		if v > maxValue {
+			maxValue = v
+			maxIndex = i
+		}
+	}
+	return maxIndex
 }

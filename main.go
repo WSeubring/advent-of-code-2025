@@ -1,9 +1,8 @@
 package main
 
-import (
-	"aoc/day1"
-)
+import "aoc/day3"
 
 func main() {
-	day1.SolvePart1AndPart2()
+	// day3.SolvePart1()
+	day3.SolvePart2()
 }
