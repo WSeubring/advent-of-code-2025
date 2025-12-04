@@ -1,0 +1,17 @@
+# gowatch.yml configuration
+app:
+  # The output binary name
+  name: "aoc"
+  # The command to run the application
+  run_cmd: "./aoc"
+  # The build command
+  build_cmd: "go build -o aoc ."
+  # File extensions to watch
+  extensions:
+    - go
+    - txt
+  # Whether to watch vendor directory
+  vendor_watch: false
+  # Directories to exclude
+  excluded_paths:
+    - vendor

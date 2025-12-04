@@ -49,3 +49,27 @@ func GetIndexOfMaxInt(ints []int) int {
 	}
 	return maxIndex
 }
+
+func GetFileAsString(filename string) (string, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return "", err
+	}
+	return string(data), nil
+}
+
+func StringToRunes(s string) []rune {
+	runes := make([]rune, len(s))
+	for i, r := range s {
+		runes[i] = r
+	}
+	return runes
+}
+
+func StringsToRunes(strings []string) [][]rune {
+	runes := make([][]rune, len(strings))
+	for i, s := range strings {
+		runes[i] = StringToRunes(s)
+	}
+	return runes
+}
